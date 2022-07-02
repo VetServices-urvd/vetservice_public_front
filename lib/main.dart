@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vetservice_public_front/authentification.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,37 +7,35 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+     
 
   // This widget is the root of your application.
   @override
    Widget build(BuildContext context) {
-    _buildVerticalLayout() {
-      return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.grey,
-        ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      );
-    }
-    _buildHorizontalLayout() {
-      return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.grey,
-        ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      );
-    }
-    return Scaffold(
-      appBar: AppBar(),
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          return orientation == Orientation.portrait
-              ? _buildVerticalLayout()
-              : _buildHorizontalLayout();
-        },
-      ),
+    // return MaterialApp(
+    //     title: 'Flutter Demo',
+    //     theme: ThemeData(
+    //       primarySwatch: Colors.grey,
+    //     ),
+    //     home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    //   );
+    return MaterialApp(
+      onGenerateRoute: (settings) {
+        // Handle '/'
+        if (settings.name == '/') {
+          return MaterialPageRoute(builder: (context) => AuthentView());
+        }
+
+        // Handle '/details/:id'
+        // var uri = Uri.parse(settings.name);
+        // if (uri.pathSegments.length == 2 &&
+        //     uri.pathSegments.first == 'details') {
+        //   var id = uri.pathSegments[1];
+        //   return MaterialPageRoute(builder: (context) => DetailScreen(id: id));
+        // }
+        //
+        // return MaterialPageRoute(builder: (context) => UnknownScreen());
+      },
     );
   }
 }
