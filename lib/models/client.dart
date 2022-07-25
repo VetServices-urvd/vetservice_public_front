@@ -1,5 +1,5 @@
 class CLient {
-  final String? email;
+  final String email;
   final String nom;
   final String prenom;
   final String mdp;

@@ -32,6 +32,18 @@ class _HomeClientTabState extends State<HomeBottomTab>{
               style: Theme.of(context).textTheme.headline5
           ),
         ),
+        Padding(
+          padding: EdgeInsets.only(top:5,bottom: 50),
+          child: Text(widget.tab_title,
+              style: Theme.of(context).textTheme.headline5
+          ),
+        ),  Padding(
+          padding: EdgeInsets.only(top:5,bottom: 50),
+          child: Text(widget.tab_title,
+              style: Theme.of(context).textTheme.headline5
+          ),
+        ),
+
       ],
     );
   }
